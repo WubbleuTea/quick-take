@@ -2,7 +2,7 @@
 [![License Badge](https://img.shields.io/badge/license-None-red)](#)
 
 ## Description  
-This application .
+This application lets the user take notes in the browser. These notes are then stored and are able to be reloaded upon returning to the site.
 
 ## Table of Contents  
 [Installation](#Installation)  
@@ -15,12 +15,11 @@ This application .
 [Questions](#Questions)
 
 ## Installation
-- Clone the repository
-- Open up terminal
+- None
 
 ## Usage  
 Take notes on this page. Notes are saved for any time you need to come back to them. (this is a static image).  
-![Creates a quality team webpage.](/assets/images/completed-page.PNG)  
+![Quality note taking application.(Image of deployed site)](deployed URL)  
 
 ## Licensing  
 None  
