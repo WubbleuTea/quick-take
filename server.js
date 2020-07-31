@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const uuid = require('uuid')
-const db = require('./db/db.json')
+let notesArray = require('./db/db.json')
 const PORT = process.env.PORT || 3001
 
 app.use(express.static('public'));
@@ -25,10 +25,10 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-    const found = db.some(note => note.id === req.params.id);
+    const found = notesArray.some(note => note.id === req.params.id);
 
     if(found) {
-        res.json(db.filter(note => note.id === req.params.id))
+        res.json(notesArray.filter(note => note.id === req.params.id))
     } else {
         res.status(400).json({ msg: `No note found with an id of ${req.params.id}`})
     }
@@ -37,8 +37,6 @@ app.get('/api/notes/:id', (req, res) => {
 
 function createNewNote(body, notesArray) {
     const note = body;
-    console.log(body)
-    console.log(notesArray)
     notesArray.push(note);
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
@@ -49,14 +47,15 @@ function createNewNote(body, notesArray) {
 
 app.post('/api/notes', (req, res) => {
     req.body.id = uuid.v4()
-    const note = createNewNote(req.body, db)
+    const note = createNewNote(req.body, notesArray)
     res.json(note)
 });
 
-function deleteNote(id, notesArray) {
+function deleteNote(id) {
 
     notesArray = notesArray.filter((note) => note.id !== id);
-
+    console.log(notesArray)
+    
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
         JSON.stringify(notesArray , null, 2)
@@ -66,13 +65,13 @@ function deleteNote(id, notesArray) {
 }
 
 app.delete('/api/notes/:id', (req, res) => {
-    const toBeDeleted = db.some(note => note.id === req.params.id);
+    const toBeDeleted = notesArray.some(note => note.id === req.params.id);
     console.log(req.params.id)
     
 
     if(toBeDeleted) {
-        res.json({ msg: 'Note deleted', db: db.filter(note => note.id !== req.params.id)});
-        deleteNote(req.params.id, db)
+        res.json({ msg: 'Note deleted', notesArray: notesArray.filter(note => note.id !== req.params.id)});
+        deleteNote(req.params.id)
     } else {
         res.status(400).json({ msg: `Cannot delete this note`})
     }
