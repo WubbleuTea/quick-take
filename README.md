@@ -35,8 +35,7 @@ If you would like to contribute please e-mail me.
 ## Technologies 
 - JavaScript
 - NodeJS
-- HTML
-- ExpresssJs
+- ExpressJs
 - Bootstrap
 - GIT
 - GitHub
