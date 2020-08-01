@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "title": "Welcome to my Application",
+    "text": "Hope you enjoy it",
+    "id": "18a4482f-d984-4359-9c6c-291d6c837eff"
+  },
+  {
+    "title": "Start by typing a title and ",
+    "text": "a note. ",
+    "id": "2f4caf8b-e80b-4280-bd60-f061c8f4575d"
+  },
+  {
+    "title": "Then click the save icon",
+    "text": "This will save your note.",
+    "id": "0bfeb7b2-9aa5-4671-b0b2-b8e9972a8dde"
+  },
+  {
+    "title": "Click on any note",
+    "text": "to see that note here.",
+    "id": "0006cfef-1aac-4a80-9113-7a1abe375962"
+  },
+  {
+    "title": "Writing a new note:",
+    "text": "If you need to write a new not click the pencil.",
+    "id": "ddf9d552-70c7-45b6-86c5-b122fa7934c2"
+  },
+  {
+    "title": "To Delete:",
+    "text": "click the trash cans.  There is no prompt so be careful of what you delete!",
+    "id": "a2d0b767-0209-4b01-bf56-05e856cdb14b"
+  }
+]

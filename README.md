@@ -4,6 +4,9 @@
 ## Description  
 This application lets the user take notes in the browser. These notes are then stored and are able to be reloaded upon returning to the site.
 
+The images takes you to the application:
+![Quality note taking application.(/assets/images/deployed-application.PNG)](https://cryptic-plains-67095.herokuapp.com/) 
+
 ## Table of Contents  
 [Installation](#Installation)  
 [Usage](#Usage)  
@@ -14,18 +17,15 @@ This application lets the user take notes in the browser. These notes are then s
 [Questions](#Questions)
 
 ## Installation
-- Cloan repository
-- cd into direcotry
+- Clone repository
+- cd into directory
 - ```npm i```
 
 ## Usage  
 Take notes on this page. Notes are saved for any time you need to come back to them.  
 - ```npm start```
 - navigate to the port specified in the terminal.
-
-(this is a static image). 
-![Quality note taking application.(Image of deployed site)](deployed URL) 
-
+ 
 ## Licensing  
 None  
 
@@ -35,9 +35,8 @@ If you would like to contribute please e-mail me.
 
 ## Technologies 
 - JavaScript
-- NodeJS
-- ExpressJs
-- Bootstrap
+- Node.js
+- Express
 - GIT
 - GitHub
 
