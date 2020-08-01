@@ -9,17 +9,22 @@ This application lets the user take notes in the browser. These notes are then s
 [Usage](#Usage)  
 [Licensing](#Licensing)  
 [Contributing](#Contributing)  
-[Test(s)](#Tests)  
 [Technologies](#Technologies)  
 [Credits](#Credits)  
 [Questions](#Questions)
 
 ## Installation
-- None
+- Cloan repository
+- cd into direcotry
+- ```npm i```
 
 ## Usage  
-Take notes on this page. Notes are saved for any time you need to come back to them. (this is a static image).  
-![Quality note taking application.(Image of deployed site)](deployed URL)  
+Take notes on this page. Notes are saved for any time you need to come back to them.  
+- ```npm start```
+- navigate to the port specified in the terminal.
+
+(this is a static image). 
+![Quality note taking application.(Image of deployed site)](deployed URL) 
 
 ## Licensing  
 None  
@@ -27,10 +32,6 @@ None
 ## Contributing  
 To contribute to this project please follow the guidlines listed below:  
 If you would like to contribute please e-mail me.
-
-## Tests
-- ```npm test```
-
 
 ## Technologies 
 - JavaScript
