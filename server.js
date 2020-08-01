@@ -15,7 +15,7 @@ app.use('/', htmlRoutes)
 // Route to api used files.
 app.use('/api/notes', notesRoutes)
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`Server now on port ${PORT}!`)
 })
 
