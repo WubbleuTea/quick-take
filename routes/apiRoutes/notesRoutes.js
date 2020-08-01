@@ -4,10 +4,11 @@ const uuid = require('uuid')
 const path = require('path');
 const { createNewNote, deleteNote } = require('../../lib/notes')
 
+// Gets the database for this server
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../db/db.json'))
 });
-
+// Adds notes to the database for this server
 router.post('/', (req, res) => {
     req.body.id = uuid.v4()
     const note = createNewNote(req.body)
