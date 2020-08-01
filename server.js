@@ -1,21 +1,18 @@
-const fs = require('fs');
-const path = require('path');
 const express = require('express');
 const app = express();
-const uuid = require('uuid')
 const htmlRoutes = require('./routes/htmlRoutes')
 const notesRoutes = require('./routes/apiRoutes/notesRoutes')
-let notesArray = require('./db/db.json')
 const PORT = process.env.PORT || 3001
 
+// Uses the public static folder
 app.use(express.static('public'));
-
+// JSON-reader
 app.use(express.json());
-
+// Body-parser
 app.use(express.urlencoded({ extended: true }));
-
+// Route to html files
 app.use('/', htmlRoutes)
-
+// Route to api used files.
 app.use('/api/notes', notesRoutes)
 
 app.listen(3001, () => {

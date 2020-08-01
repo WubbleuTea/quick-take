@@ -29,15 +29,9 @@ router.get('/:id', (req, res) => {
 
 // Deletes a specific note by id
 router.delete('/:id', (req, res) => {
-    // check all the items in the array to see if the id of the deleted item matches one of the items
-    const toBeDeleted = notesArray.some(note => note.id === req.params.id);
-    // if matching lets the user know in the console what is being deleted and 
-    if(toBeDeleted) {
-        res.json({ msg: 'Note deleted', notesArray: notesArray.filter(note => note.id !== req.params.id)});
-        deleteNote(req.params.id)
-    } else {
-        res.status(400).json({ msg: `Cannot delete this note`})
-    }
+    // filters out the array and returns it.
+    res.json(deleteNote(req.params.id));
+    
 })
 
 module.exports = router;
