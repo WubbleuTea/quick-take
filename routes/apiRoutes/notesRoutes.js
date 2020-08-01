@@ -2,7 +2,7 @@ const router = require('express').Router();
 let notesArray = require('../../db/db.json');
 const uuid = require('uuid')
 const path = require('path');
-const { createNewNote, deleteNote } = require('../../lib/notes');
+const { createNewNote, deleteNote } = require('../../lib/notes')
 
 // Gets the database for this server
 router.get('/', (req, res) => {
@@ -18,16 +18,13 @@ router.post('/', (req, res) => {
 
 // Gets a specific note by id
 router.get('/:id', (req, res) => {
+    const found = notesArray.some(note => note.id === req.params.id);
     // if it is a found then show that object
-    notesArray.forEach(note => {
-        console.log(`note id: ${note.id}, req.params.id: ${req.params.id}`)
-        if(note.id === req.params.id) {
-            console.log(note.id)
-            res.json(notesArray.filter(note => note.id === req.params.id))
-        } else {
-            res.status(400).json({ msg: `No note found with an id of ${req.params.id}`})
-        }
-    })
+    if(found) {
+        res.json(notesArray.filter(note => note.id === req.params.id))
+    } else {
+        res.status(400).json({ msg: `No note found with an id of ${req.params.id}`})
+    }
 })
 
 // Deletes a specific note by id
@@ -36,8 +33,8 @@ router.delete('/:id', (req, res) => {
     const toBeDeleted = notesArray.some(note => note.id === req.params.id);
     // if matching lets the user know in the console what is being deleted and 
     if(toBeDeleted) {
-        res.json(deleteNote(req.params.id));
-        
+        res.json({ msg: 'Note deleted', notesArray: notesArray.filter(note => note.id !== req.params.id)});
+        deleteNote(req.params.id)
     } else {
         res.status(400).json({ msg: `Cannot delete this note`})
     }
