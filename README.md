@@ -5,7 +5,7 @@
 This application lets the user take notes in the browser. These notes are then stored and are able to be reloaded upon returning to the site.
 
 The images takes you to the application:
-[![Quality note taking application.](/assets/images/deployed-application.PNG)](https://cryptic-plains-67095.herokuapp.com/) 
+[![Quality note taking application.](/public/assets/images/deployed-application.PNG)](https://cryptic-plains-67095.herokuapp.com/) 
 
 ## Table of Contents  
 [Installation](#Installation)  

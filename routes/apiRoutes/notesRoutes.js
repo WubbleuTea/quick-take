@@ -1,5 +1,4 @@
 const router = require('express').Router();
-let notesArray = require('../../db/db.json');
 const uuid = require('uuid')
 const path = require('path');
 const { createNewNote, deleteNote } = require('../../lib/notes')
@@ -12,26 +11,27 @@ router.get('/', (req, res) => {
 // Adds notes to the database for this server
 router.post('/', (req, res) => {
     req.body.id = uuid.v4()
-    const note = createNewNote(req.body)
-    res.json(note)
+    createNewNote(req.body)
+    res.sendStatus(200);
 });
-
-// Gets a specific note by id
-router.get('/:id', (req, res) => {
-    const found = notesArray.some(note => note.id === req.params.id);
-    // if it is a found then show that object
-    if(found) {
-        res.json(notesArray.filter(note => note.id === req.params.id))
-    } else {
-        res.status(400).json({ msg: `No note found with an id of ${req.params.id}`})
-    }
-})
 
 // Deletes a specific note by id
 router.delete('/:id', (req, res) => {
     // filters out the array and returns it.
-    res.json(deleteNote(req.params.id));
-    
+    deleteNote(req.params.id);
+    res.sendStatus(200); 
 })
+
+// // Gets a specific note by id (only used during development)
+// let notesArray = require('../../db/db.json');
+// router.get('/:id', (req, res) => {
+//     const found = notesArray.some(note => note.id === req.params.id);
+//     // if it is a found then show that object
+//     if(found) {
+//         res.json(notesArray.filter(note => note.id === req.params.id))
+//     } else {
+//         res.status(400).json({ msg: `No note found with an id of ${req.params.id}`})
+//     }
+// })
 
 module.exports = router;
